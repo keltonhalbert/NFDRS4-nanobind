@@ -1,6 +1,7 @@
 // clang-format off
 #include <nanobind/nanobind.h>
-#include <NFDRS4/nfdrs4.h>
+#include <nanobind/ndarray.h>
+#include <nfdrs4.h>
 
 namespace nb = nanobind;
 
