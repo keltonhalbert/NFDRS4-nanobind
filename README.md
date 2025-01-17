@@ -5,6 +5,7 @@ Python bindings for NFDRS4 using Nanobind
 ```bash
 ## Download the source code into ./NFDRS4-nanobind
 git clone git@github.com:keltonhalbert/NFDRS4-nanobind.git
+cd ./NFDRS4-nanobind
 ## Download the submodule dependencies
 git submodule update --init --recursive
 ```
