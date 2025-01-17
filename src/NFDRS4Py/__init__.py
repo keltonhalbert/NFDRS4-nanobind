@@ -1,1 +1,1 @@
-from .nfdrs4_wrap import add, __doc__
+from .nfdrs4_wrap import * 

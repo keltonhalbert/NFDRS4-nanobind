@@ -59,10 +59,17 @@ NB_MODULE(nfdrs4_wrap, m) {
                 for (std::size_t i = 0; i < air_temp.shape(1); ++i) {
                     // Here we can do some work, or in this case, just print
                     // the output to the console...
-                    printf("%f\t%f\t%f\t%f\n", air_temp(j, i), relhum(j, i),
-                           precip(j, i), wspd(j, i));
+                    printf("%d %d\t%f\t%f\t%f\t%f\n", j, i, air_temp(j, i),
+                           relhum(j, i), precip(j, i), wspd(j, i));
+                    // We included the nfdrs4.h header file, so anything
+                    // in there can be called. Other header files can be
+                    // included as well.
                 }
             }
+
+            // Later, we can figure out what kind of return array or type that
+            // you want and have it return a numpy array of state objects,
+            // or double values, etc etc.
         },
         // The binding library can't detect the actual variable names,
         // just the types (e.g. float, double). This allows for you to name
