@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
+
 project(NFDRS4Py LANGUAGES CXX)
 
 include(ExternalProject)
@@ -32,6 +33,8 @@ find_package(Python 3.12
   REQUIRED COMPONENTS Interpreter Development.Module
   OPTIONAL_COMPONENTS Development.SABIModule)
 
+## for LSP
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 ## NFDRS4 needs to build config4cpp 
 set(CONFIG4CPP_SRC ${CMAKE_SOURCE_DIR}/external/NFDRS4/extern/config4cpp)
 set(CONFIG4CPP_DIR ${CMAKE_SOURCE_DIR}/external/NFDRS4/extern/config4cpp/include)
