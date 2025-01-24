@@ -1,0 +1,66 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+## CMake stuff
+*.cmake
+CMakeCahce.txt
+install_manifest.txt
+Makefile
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Ignore the build directory
+build
+.cache
+
+# SWIG python files and wrappers
+src/swig/build
+src/swig/*.egg-info
+src/swig/nwsspc/sharp/calc/*_wrap.cpp
+src/swig/nwsspc/sharp/calc/constants.py
+src/swig/nwsspc/sharp/calc/interp.py
+src/swig/nwsspc/sharp/calc/layer.py
+src/swig/nwsspc/sharp/calc/params.py
+src/swig/nwsspc/sharp/calc/parcel.py
+src/swig/nwsspc/sharp/calc/profile.py
+src/swig/nwsspc/sharp/calc/thermo.py
+src/swig/nwsspc/sharp/calc/winds.py
