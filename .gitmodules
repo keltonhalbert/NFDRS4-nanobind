@@ -1,3 +1,6 @@
 [submodule "external/nanobind"]
 	path = external/nanobind
 	url = git@github.com:wjakob/nanobind.git
+[submodule "external/NFDRS4"]
+	path = external/NFDRS4
+	url = git@github.com:keltonhalbert/NFDRS4.git

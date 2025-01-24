@@ -35,30 +35,12 @@ find_package(Python 3.12
 
 ## for LSP
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-## NFDRS4 needs to build config4cpp 
-set(CONFIG4CPP_SRC ${CMAKE_SOURCE_DIR}/external/NFDRS4/extern/config4cpp)
-set(CONFIG4CPP_DIR ${CMAKE_SOURCE_DIR}/external/NFDRS4/extern/config4cpp/include)
-set(CONFIG4CPP_LIB ${CMAKE_SOURCE_DIR}/external/NFDRS4/extern/config4cpp/lib/libconfig4cpp.a)
-message(STATUS "CONFIG4CPP_DIR = ${CONFIG4CPP_DIR}")
-message(STATUS "CONFIG4CPP_LIB= ${CONFIG4CPP_LIB}")
-
-ExternalProject_Add(
-    _config4cpp
-    SOURCE_DIR ${CONFIG4CPP_SRC}
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CONFIG4CPP_SRC}
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND make
-    INSTALL_COMMAND "" 
-    BUILD_IN_SOURCE 1
-)
 
 # Import nanobind through CMake's find_package mechanism
 add_subdirectory(external/nanobind)
 
 ## import NFDRS4 
 add_subdirectory(external/NFDRS4)
-
-add_dependencies(NFDRS4 _config4cpp)
 
 # We are now ready to compile the actual extension module
 nanobind_add_module(
