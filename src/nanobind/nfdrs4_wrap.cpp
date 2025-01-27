@@ -9,11 +9,15 @@ namespace nb = nanobind;
 // Array types are double 2 dimensions, CPU only (no CUDA/GPU),
 // contiguous C-style arrays, read-only.
 using const_2D_arr_t =
-    nb::ndarray<double, nb::ndim<2>, nb::device::cpu, nb::c_contig, nb::ro>;
+    nb::ndarray<double, nb::numpy, nb::ndim<2>, nb::device::cpu, nb::c_contig, nb::ro>;
 
 // clang-format on
 NB_MODULE(nfdrs4_wrap, m) {
     m.doc() = "NFDRS4Py :: Nanobind Python wrappers for NFDRS4";
+
+    nb::class_<NFDRS4>(m, "NFDRS4")
+        .def(nb::init<>())
+        .def(nb::init<double, char, int, double, bool, bool, bool>());
 
     // Here we are defining a wrapper function that does some NFDRS4
     // library calculations. A lamba function (an anonymous C++ function)
